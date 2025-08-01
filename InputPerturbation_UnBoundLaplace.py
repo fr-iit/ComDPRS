@@ -175,9 +175,6 @@ if __name__ == "__main__":
     elif dataset == 'beauty':
         R = DL.load_user_item_matrix_beauty_DP()
 
-    user_profiles = DL.user_profile(R)
-    item_popularity = compute_item_popularity(R)
-
     beta_m = 1.0
     beta_u = 1.0
 
@@ -190,20 +187,7 @@ if __name__ == "__main__":
 
     r_min, r_max = 1, 5  # Rating limits
 
-    # Step 1: Compute Item Averages
-    # IAvg = compute_item_averages(R, beta_m, G_ep, I_ep, r_min, r_max)
-    # print("Item Averages len:", len(IAvg))
-
-    # Step 2: Compute User Averages
-    # UAvg = compute_user_averages(R, IAvg, beta_u, G_ep, U_ep)
-    # print("User Averages len:", len(UAvg))
-
     B = 1
-
-    # Compute the discounted and clamped matrix
-    # R_discounted_clamped = calculate_discounted_and_clamped_matrix(R, IAvg, UAvg, B)
-    #
-    # input_R = input_perturbation(R_discounted_clamped, delta_r= 2, epsilon=Input_ep, B = 1)
 
     # Variables to track the best run
     best_rmse = float('inf')  # Initialize with a high value
